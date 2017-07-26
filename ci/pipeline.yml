@@ -1,0 +1,26 @@
+---
+resources:
+- name: repo
+  type: git
+  source: 
+    uri: 'https://github.com/yuichi10/concourse-go.git'
+    branch: master
+  check_every: 1200h
+- name: pcf
+  type: cf
+  source:
+    api: 'https://api.local.pcfdev.io'
+    username: ((pcf-username))
+    password: ((pcf-password))
+    organization: ((pcf-org))
+    space: ((pcf-space))
+    skip_cert_check: true
+jobs:
+- name: deploy
+  serial: true
+  plan:
+  - get: repo
+  - put: pcf
+    params:
+      manifest: repo/manifest.yml
+      path: repo

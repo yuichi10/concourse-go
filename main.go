@@ -17,8 +17,8 @@ func hello(w http.ResponseWriter, r *http.Request) {
 func main() {
 	port := os.Getenv("PORT")
 	if len(port) <= 0 {
-		port = ":8888"
+		port = "8888"
 	}
 	http.HandleFunc("/", hello)
-	http.ListenAndServe(port, nil)
+	http.ListenAndServe(":"+port, nil)
 }

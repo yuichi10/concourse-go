@@ -7,7 +7,7 @@ image_resource:
     repository: 'golang:1.8.3-alpine3.6'
     tag: 'latest'
 inputs:
-  - name: repo
+- name: repo
 run:
   path: ci/unit-test.sh
   dir: repo

@@ -3,8 +3,7 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source:
-    source: {repository: concourse/static-golang}
+  source: {repository: concourse/static-golang}
 inputs:
 - name: repo
 run:

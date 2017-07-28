@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/yuichi10/concourse-go/util"
+	"github.com/yuichi10/pcf-app/util"
 )
 
 func hello(w http.ResponseWriter, r *http.Request) {

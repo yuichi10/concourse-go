@@ -3,7 +3,7 @@ resources:
 - name: repo
   type: git
   source: 
-    uri: 'https://github.com/yuichi10/concourse-go.git'
+    uri: 'https://github.com/yuichi10/pcf-app.git'
     branch: master
   check_every: 1200h
 - name: pcf
@@ -27,7 +27,10 @@ jobs:
   plan:
   - get: repo
     passed: [go-test]
+    trigger: true
+  - task: prepare-build
+    file: repo/ci/build.yml
   - put: pcf
     params:
-      manifest: repo/manifest.yml
-      path: repo
+      manifest: out/manifest.yml
+      path: out

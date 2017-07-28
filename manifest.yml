@@ -1,9 +1,9 @@
 ---
 applications:
-- name: my-app
+- name: pcf-app
   instance: 1
   buildpack: https://github.com/cloudfoundry/go-buildpack.git#v1.8.5
   domain: tcp.local.pcfdev.io
   env:
     GOVERSION: go1.8.3
-    GOPACKAGENAME: github.com/yuichi10/concourse-go
+    GOPACKAGENAME: github.com/yuichi10/pcf-app

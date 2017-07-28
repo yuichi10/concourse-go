@@ -6,6 +6,10 @@ image_resource:
   source: {repository: concourse/static-golang}
 inputs:
 - name: repo
+outputs:
+- name: out
 run:
-  path: ci/unit-test.sh
+  path: ci/build.sh
   dir: repo
+  args:
+    - ../out

@@ -4,8 +4,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    source: {repository: golang, tag: "1.8.3"}
-    tag: 'latest'
+    source: {repository: concourse/static-golang}
 inputs:
 - name: repo
 run:

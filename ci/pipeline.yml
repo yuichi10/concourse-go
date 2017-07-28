@@ -16,10 +16,17 @@ resources:
     space: ((pcf-space))
     skip_cert_check: true
 jobs:
+- name: go-test
+  plan:
+  - get: repo
+    trigger: true
+  - task: unit-test
+    file: repo/ci/unit-test.yml
 - name: deploy
   serial: true
   plan:
   - get: repo
+    passed: [go-test]
   - put: pcf
     params:
       manifest: repo/manifest.yml

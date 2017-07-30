@@ -30,7 +30,7 @@ jobs:
     trigger: true
   - task: prepare-build
     file: repo/ci/build.yml
-  - put: out
+  - put: pcf
     params:
       manifest: out/manifest.yml
       path: out

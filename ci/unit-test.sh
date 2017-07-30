@@ -1,3 +1,6 @@
 #!/bin/bash
 
-go test ./...
+set -eu
+
+mv ./ /go/src
+go test /go/src/...

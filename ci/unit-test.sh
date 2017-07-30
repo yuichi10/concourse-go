@@ -2,7 +2,9 @@
 
 set -eu
 
-cp -r ./* /go/src/
+dir="/go/src/github.com/yuichi10/concourse-go"
+mkdir -p $dir
+cp -r ./* $dir
 pushd /go/src/
 go test ./...
 popd

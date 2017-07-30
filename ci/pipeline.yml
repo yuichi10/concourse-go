@@ -3,7 +3,7 @@ resources:
 - name: repo
   type: git
   source: 
-    uri: 'https://github.com/yuichi10/concourse-go.git'
+    uri: 'https://github.com/yuichi10/pcf-app.git'
     branch: master
   check_every: 1200h
 - name: pcf

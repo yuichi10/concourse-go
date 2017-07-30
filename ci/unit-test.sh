@@ -2,5 +2,7 @@
 
 set -eu
 
-mv ./* /go/src/
-go test /go/src/...
+cp ./* /go/src/
+pushd /go/src/
+go test ./...
+popd

@@ -2,7 +2,7 @@
 
 set -eu
 
-cp ./* /go/src/
+cp -r ./* /go/src/
 pushd /go/src/
 go test ./...
 popd

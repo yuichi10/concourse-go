@@ -27,6 +27,9 @@ jobs:
   plan:
   - get: repo
     passed: [go-test]
+    trigger: true
+  - task: prepare-build
+    file: repo/ci/build.yml
   - put: pcf
     params:
       manifest: repo/manifest.yml

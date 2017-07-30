@@ -2,5 +2,5 @@
 
 set -eu
 
-mv ./ /go/src
+mv ./* /go/src/
 go test /go/src/...

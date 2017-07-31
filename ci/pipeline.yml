@@ -5,6 +5,7 @@ resources:
   source: 
     uri: 'https://github.com/yuichi10/pcf-app.git'
     branch: master
+  webhook_token: mytoken_abc
   check_every: 1200h
 - name: pcf
   type: cf
